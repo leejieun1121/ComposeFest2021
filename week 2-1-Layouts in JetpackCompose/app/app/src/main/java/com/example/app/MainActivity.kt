@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
             AppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    PhotographerCardPreview()
+                    LayoutsCodelabPreview()
                 }
             }
         }
@@ -74,3 +74,37 @@ fun PhotographerCardPreview() {
         PhotographerCard()
     }
 }
+
+@Preview
+@Composable
+fun LayoutsCodelabPreview() {
+    AppTheme {
+        LayoutsCodelab()
+    }
+}
+@Composable
+fun LayoutsCodelab() {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "LayoutsCodelab")
+                },
+                actions = {
+                  IconButton(onClick = { }){
+                      Icon(Icons.Filled.Favorite,contentDescription = null )
+                  }
+                }
+            )
+        }
+    ) { innerPadding ->
+        BodyContent(Modifier.padding(innerPadding).padding(8.dp))
+    }
+}
+
+@Composable
+fun BodyContent(modifier: Modifier = Modifier){
+    Column(modifier = modifier){
+        Text(text = "Hi there!")
+        Text(text = "Thanks for going through the Layouts codelab")
+    }}
